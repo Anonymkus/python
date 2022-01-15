@@ -23,6 +23,16 @@ import random as r
 	Победа и проигрыш:                                                  ///
 		кончились карты
 		нечем ответеть в споре
+		
+	TODO:
+		сделать new_game():
+			make_deck()
+			distribute_deck()
+			table = []
+			game = True
+			
+			while game:
+				game = new_round(user_deck, comp_deck, table)
 """
 
 suits = ("червей", "пик", "крестей", "бубен")
