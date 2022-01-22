@@ -36,10 +36,10 @@ def start_new_game(start_new_round):
 
 	print("\n----- The game end! -----")
 	if user_deck:
-		print("user has won!")
+		print("\nuser has won!")
 	else:
-		print("comp has won!")
-	input("f")
+		print("\ncomp has won!")
+	input("\nENTER to continue")
 
 
 
@@ -105,7 +105,7 @@ def start_new_round(user_deck, comp_deck, deck, table):
 				print(card["cost"], card["suit"], end=", ")
 		# input("\nENTER - to continue")
 	table.clear()
-	# input("\npause")
+	input("\nENTER to continue")
 			
 	
 start_new_game(start_new_round)
