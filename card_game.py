@@ -34,28 +34,30 @@ def start_new_game(start_new_round):
 	while user_deck and comp_deck:
 		start_new_round(user_deck, comp_deck, deck, table)
 
-	print("----- The game end! -----")
+	print("\n----- The game end! -----")
 	if user_deck:
 		print("user has won!")
 	else:
 		print("comp has won!")
+	input("f")
 
 
 
 def start_new_round(user_deck, comp_deck, deck, table):
-	input("ENTER - to continue")
+	# input("ENTER - to continue")
 	os.system("cls")
 	print("\n----- user deck -----")
 	for card in user_deck:
-		print(card["cost"], card["suit"],", ", end="")
+		print(card["cost"], card["suit"], end=", ")
 	print("\n\n----- comp deck -----")
 	for card in comp_deck:
-		print(card["cost"], card["suit"],", ", end="")
+		print(card["cost"], card["suit"], end=", ")
 
 	user_card = user_deck.pop()
 	comp_card = comp_deck.pop()	
 	table.append(user_card)
 	table.append(comp_card)
+
 
 	print("\n\n----- User move -----")
 	print(user_card["cost"], user_card["suit"])
@@ -80,19 +82,30 @@ def start_new_round(user_deck, comp_deck, deck, table):
 			
 
 	print("\n----- result round -----")
-	if user_card["cost"] > comp_card["cost"]:
-		print(f"user won and take ")
-		for card in table:
-			user_deck.insert(0, table)
-			print(card["cost"], card["suit"],", ", end="")
-	else:
+	if user_card["cost"] == 14 and comp_card["cost"] == 6:
 		print(f"computer won and take ")
 		for card in table:
-			comp_deck.insert(0, table)
-			print(card["cost"], card["suit"],", ", end="")
-	input("\nENTER - to continue")
+			comp_deck.insert(0, card)
+			print(card["cost"], card["suit"], end=", ")
+	elif user_card["cost"] == 6 and comp_card["cost"] == 14:
+		print(f"user won and take ")
+		for card in table:
+			user_deck.insert(0, card)
+			print(card["cost"], card["suit"], end=", ")
+	else:
+		if user_card["cost"] > comp_card["cost"]:
+			print(f"user won and take ")
+			for card in table:
+				user_deck.insert(0, card)
+				print(card["cost"], card["suit"], end=", ")
+		else:
+			print(f"computer won and take ")
+			for card in table:
+				comp_deck.insert(0, card)
+				print(card["cost"], card["suit"], end=", ")
+		# input("\nENTER - to continue")
 	table.clear()
+	# input("\npause")
 			
 	
 start_new_game(start_new_round)
-
