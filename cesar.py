@@ -2,7 +2,6 @@ alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя"
 alphabet += alphabet.upper()
 
 
-
 def encrypt(message:str, shift:int) -> str:
 	result = ""
 	for letter in message:
@@ -15,6 +14,7 @@ def encrypt(message:str, shift:int) -> str:
 	return result
 
 message_encrypted = encrypt("Привет", 5)
+
 
 def bruteforce_encrypt(message:str, func) -> str:
 	for i in range(len(alphabet)):
