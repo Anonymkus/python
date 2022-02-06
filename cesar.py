@@ -14,6 +14,7 @@ def encrypt(message:str, shift:int) -> str:
 	return result
 
 message_encrypted = encrypt("Привет", 5)
+print(message_encrypted)
 
 
 def bruteforce_encrypt(message:str, func) -> str:
