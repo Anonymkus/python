@@ -18,7 +18,7 @@ message_encrypted = encrypt("Привет", 5)
 
 def bruteforce_encrypt(message:str, func) -> str:
 	for i in range(len(alphabet)):
-		print(i, encrypt(message_encrypted, i * -1))
+		print(i, encrypt(message, i * -1))
 
 
 bruteforce_encrypt(message_encrypted, encrypt)
