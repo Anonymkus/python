@@ -19,7 +19,7 @@ def encode(text: str) -> str:
 	return result
 
 
-code = encode("Дудос incoming")
+code = encode("aA_Бб.?")
 print(code)
 
 
