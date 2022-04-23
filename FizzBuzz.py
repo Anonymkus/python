@@ -10,11 +10,12 @@ number = range(1,101)
 for num in number:
 	fizz = num % 3
 	buzz = num % 5
-	if fizz == 0 and buzz == 0:
+	fizzbuzz = num % 15
+	if fizzbuzz == 0:
 		print(f"FizBuzz {num}")
 	elif buzz == 0:
 		print(f"buzz {num}")
 	elif fizz == 0:
 		print(f"fizz {num}")
 	else:
-		print(f"Другие числа {num}")
+		print(num)
